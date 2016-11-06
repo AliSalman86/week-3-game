@@ -1,3 +1,4 @@
+window.onload = function() {
 /* set all variables and needed functions to single game variable */
 var arrletters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
 "t", "u", "v", "w", "x", "y", "z"];
@@ -6,6 +7,7 @@ var losses = 0;
 var guesses = 9;
 var guessesLeft = 9;
 var guessedArr = [];
+var repeat;
 
 var randomLetter = arrletters[Math.floor(Math.random() * arrletters.length)];
 
@@ -29,10 +31,13 @@ var gameEvent = {
 }
 
     document.addEventListener('keyup', function(event){
-    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    guessesLeft--;
-    guessedArr.push(userGuess);
-
+    userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    // Letters to be counted only for 1 press
+    var repeat = guessedArr.indexOf(userGuess);
+        if (repeat == -1) {
+        guessesLeft--;
+        guessedArr.push(userGuess);
+        }
     gameEvent.updateGuessesLeft();
     gameEvent.updateguessedArr();
 
@@ -47,5 +52,19 @@ var gameEvent = {
         gameEvent.reset();
     }
 });
+    var audioplay = document.createElement('audio');
+    audioplay.setAttribute('src', 'assets/audio/bgaudio.mp3');
 
+    // play button
+    var play = document.getElementById('play');
+    play.onclick = function() {
+        audioplay.play();
+        audioplay.loop = true;
+    }
+    // pause button
+    var pause = document.getElementById('pause');
+    pause.onclick = function() {
+        audioplay.pause();
+    }
+}
 

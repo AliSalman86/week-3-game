@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(https://cdn.suwalls.com/wallpapers/fantasy/death-ball-17719-1920x1200.jpg);
+    background-size: cover;
+}
+
+.wrapper {
+    margin: 10% auto;
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #4aaaa5;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+hr {
+    margin: 0;
+    border-color: #4aaaa5;
+}
+
+#details {
+    text-align: center;
+}
+
+.results {
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+.control {
+    margin: 40px auto;
+    text-align: center;
+}
+
+button {
+    width: 60px;
+    height: 40px;
+    background: rgba(74, 170, 165, 0.5);
+    border: 1px solid black;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
